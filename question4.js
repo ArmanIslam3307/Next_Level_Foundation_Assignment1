@@ -1,0 +1,22 @@
+// Write a function getCngFare(distance, isNight, waitingMinutes) that returns the total fare in taka.
+
+function getCngFare(distance, isNight = false, waitingMinutes = 0) {
+    let fare = 50;
+
+    if (distance > 2) {
+        fare += ((distance - 2) * 15)+(waitingMinutes * 2)
+        if (isNight) {
+            fare *= 1.20
+        }
+    }
+
+    return fare;
+}
+
+console.log(getCngFare(2))
+console.log(getCngFare(1))
+console.log(getCngFare(5))
+console.log(getCngFare(10))
+console.log(getCngFare(5,false,10))
+console.log(getCngFare(5,true))
+console.log(getCngFare(5,true,10))
